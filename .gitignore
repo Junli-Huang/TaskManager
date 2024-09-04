@@ -1,0 +1,38 @@
+# Node.js related files
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+
+# Quasar/Vue.js related files
+/dist/
+/public/
+/coverage/
+*.local
+
+# Logs
+logs
+*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Docker related files
+**/Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+docker-compose.prod.yml
+/docker-data
+/.docker
+
+# VSCode
+.vscode/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Nginx and Redis related files
+**/nginx.conf
+**/redis.conf
