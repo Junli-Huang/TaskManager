@@ -186,9 +186,3 @@ docker-compose down
 ## License
 
 本项目采用 [GNU General Public License v3.0](./LICENSE)。
-
----
-
-## 总结
-
-这份 README 涵盖了项目的功能介绍、运行步骤、Swagger 自动生成 API 文档的使用、API 参考以及开发环境配置。你可以根据实际项目需求进一步完善文档。
