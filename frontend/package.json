@@ -1,0 +1,17 @@
+{
+    "name": "task-manager-frontend",
+    "version": "1.0.0",
+    "description": "Task Manager frontend with Vue.js and Quasar",
+    "scripts": {
+      "build": "quasar build",
+      "dev": "quasar dev"
+    },
+    "dependencies": {
+      "quasar": "^2.0.0",
+      "vue": "^3.0.0"
+    },
+    "devDependencies": {
+      "@quasar/app": "^3.0.0"
+    }
+  }
+  

@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    networks:
+      - app-network
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - app-network
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/task-manager
+      - REDIS_URI=redis://redis:6379
+      - JWT_SECRET=your_jwt_secret
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+    networks:
+      - app-network
+
+volumes:
+  mongo-data:
+
+networks:
+  app-network:
+    driver: bridge
